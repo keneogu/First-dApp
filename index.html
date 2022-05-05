@@ -35,9 +35,17 @@
 		</div>
 	</body>
 
-	<script
-  src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
-  type="application/javascript"
-	>
+<script
+src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+type="application/javascript"
+>
+</script>
+<script>
+	window.ethereum.enable();
+	var provider = new ethers.providers.Web3Provider(
+		web3.currentProvider,
+		"ropsten"
+	);
+
 </script>
 </html>
