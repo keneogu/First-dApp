@@ -75,6 +75,18 @@ type="application/javascript"
 		"type": "function"
 	}
 ];
-	
+	var MoodContract;
+	var signer;
+	provider.send("eth_requestAccounts", []).then(() => {
+  provider.listAccounts().then((accounts) => {
+    signer = provider.getSigner(accounts[0]);
+    MoodContract = new ethers.Contract(
+      MoodContractAddress,
+      MoodContractABI,
+      signer
+			);
+		});
+	});
+
 </script>
 </html>
