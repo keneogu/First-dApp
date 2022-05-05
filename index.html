@@ -87,6 +87,11 @@ type="application/javascript"
 			);
 		});
 	});
+async function getMood() {
+  const getMoodPromise = MoodContract.getMood();
+  const Mood = await getMoodPromise;
+  console.log(Mood);
+}
 
 </script>
 </html>
