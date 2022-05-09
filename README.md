@@ -15,11 +15,12 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Text editor
-Remix IDE
-Get a browser like chrome or firefox in their recent versions
-Node.js
-Node Package Manager
+- Text editor
+- Remix IDE
+- Get a browser like chrome or firefox in their recent versions
+- Node.js
+- Node Package Manager
+- MetaMask account
 
 ### Setup
 
