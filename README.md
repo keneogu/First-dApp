@@ -6,7 +6,7 @@
 ## Built With
 
 - JavaScript
-- Solana
+- Solidity
 - HTML5
 
 ## Getting Started
