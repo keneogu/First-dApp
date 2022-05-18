@@ -35,18 +35,15 @@
 		</div>
 	</body>
 
-<script
-src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
-type="application/javascript"
->
-</script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 <script>
 	window.ethereum.enable();
 	var provider = new ethers.providers.Web3Provider(
 		web3.currentProvider,
 		"ropsten"
 	);
-	var MoodContractAddress = "0xC2376045f134946782FB3D5d38628BF1f4324066";
+	
+	var MoodContractAddress = "0xc591F5843DBB0f8FD88Ef5252b76f60c85053e25";
 	var MoodContractABI = [
 	{
 		"inputs": [
@@ -75,18 +72,21 @@ type="application/javascript"
 		"type": "function"
 	}
 ];
-	var MoodContract;
-	var signer;
-	provider.send("eth_requestAccounts", []).then(() => {
-  provider.listAccounts().then((accounts) => {
-    signer = provider.getSigner(accounts[0]);
-    MoodContract = new ethers.Contract(
-      MoodContractAddress,
-      MoodContractABI,
-      signer
-			);
-		});
+
+var MoodContract;
+var signer;
+
+provider.send("eth_requestAccounts", []).then(() => {
+provider.listAccounts().then((accounts) => {
+	signer = provider.getSigner(accounts[0]);
+	MoodContract = new ethers.Contract(
+		MoodContractAddress,
+		MoodContractABI,
+		signer
+		);
 	});
+});
+
 async function getMood() {
   const getMoodPromise = MoodContract.getMood();
   const Mood = await getMoodPromise;
@@ -98,5 +98,6 @@ async function setMood() {
   const setMoodPromise = MoodContract.setMood(mood);
   await setMoodPromise;
 }
+
 </script>
 </html>
